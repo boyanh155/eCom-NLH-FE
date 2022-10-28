@@ -2,7 +2,7 @@
 import { logIn, logOut, setUserInfos } from "./authSlice";
 import { Redirect, useHistory } from "react-router-dom";
 import { authApiSlice } from "./authApiSlice";
-import cartController from "../cart/function"
+import cartController from "../cart/function";
 import { store } from "../../redux/stores";
 import { setCurrentCart } from "../cart/cartSlice";
 const { dispatch } = store;
@@ -16,20 +16,22 @@ const authHandler = {
     let set = false;
     try {
       //   let result = login({ email, password }).unwrap();
-      let response = await dispatch(
+      const response = await dispatch(
         authApiSlice.endpoints.login.initiate({ email, password })
       );
-      let { data: result } = response.data.data;
-      if (response.data.data.status) {
-        let { role, name, avatar, email, access_token, userId } = result;
+      let result = {...response.data};
+
+      if (!response.error) {
+        const {access_token} = result.data
+        let { role, name, avatar, email, _id } = result.data.user;
         set = true;
         // add to local storage
         // finish login
         dispatch(logIn());
         dispatch(
-          setUserInfos({ role, name, avatar, email, access_token, userId })
+          setUserInfos({ role:role||"ROLE_USER", name, avatar, email, access_token, userId:_id })
         );
-        // 
+        //
         // const cart = cartController.getCurrentCart();
         // cart && dispatch(setCurrentCart({}))
       } else {
@@ -110,7 +112,6 @@ const authHandler = {
   },
   logOut: () => {
     store.dispatch(logOut());
-  
   },
 };
 export default authHandler;

@@ -1,23 +1,19 @@
 import { apiSlice } from "../../apis/apiSlice";
 
+const base_url = "http://localhost:5000/api"
+
 export const authApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         login: builder.mutation({
             query: (inputData) => ({
-                url: "/login",
+                url: `http://localhost:5000/api/auth/login`,
                 method: "POST",
                 body: {...inputData },
             }),
-            transformResponse: (res, meta) => {
-                return {
-                    status: meta.response.status === 200 ? true : false,
-                    data: res,
-                };
-            },
         }),
         register: builder.mutation({
             query: (inputData) => ({
-                url: "/register-email",
+                url: `http://localhost:5000/api/auth/register`,
                 method: "POST",
                 body: {...inputData },
             }),

@@ -10,6 +10,7 @@ import "../sass/auth/_login.scss";
 
 // Function
 import authController from "../features/auth/functions";
+import { toast } from "react-toastify";
 const Login = () => {
   // check login
   const isLogin = useSelector(selectLoginStatus);
@@ -51,11 +52,17 @@ const Login = () => {
       let password = values.password;
       // Xử lý result
       let result = await authController.login({ email, password });
-
+      console.log(result)
       if (result) {
         history.push("/");
       } else {
         history.push("/login");
+        toast.error({
+          position: "top-right",
+          toastId:99,
+          autoClose: 5000,
+          closeOnClick: true,
+        })
       }
     };
 
