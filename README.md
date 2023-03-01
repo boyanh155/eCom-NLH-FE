@@ -3,17 +3,20 @@
 <br/>
 **19110237 - Lê Hoàng Lộc <br/>
 19110221 - Nguyễn Thái Hưng <br/>
-19110036 - Dan Bảo Nguyên <br/>**
+19110036 - Dan Bảo Nguyên <br/>
+20110072 - Đoàn Chấn Hưng <br/>
+20110544 - Trương Tấn Phúc <br/>
+**
 
-## Team 56 WebApp all version
+## Team 08 WebApp all version
 
-**Version 2.0** - Latest - NLH ecom app   - HCMUTE TLCN project 2022 <br/>
+**Version 2.0** - Latest - NLH ecom app   - HCMUTE HCI project 2022 <br/>
 **Link:** https://e-com-nlh-fe.vercel.app <br/>
 **Version 1.0** - Old    - TGDD clone app - Intership program Fsoft Acedemy 2022 <br/>
 **Link:** https://02-tgdd-react02.vercel.app
 
 
-## Noti - BE only (11/02/2022 - Loc - Team 56 Representation)
+## Noti - BE only (03/01/2022 - Loc - Team 08 Representation)
 Heroku's free dynos will no longer be available from 28, Novemver 2022 <br/>
 **Alter: Render WebService <br/>
 **Link: https://tlcn-2022-be.onrender.com <br/>**
